@@ -9,7 +9,7 @@ app.config.from_object(os.environ['SETTINGS'])
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
-from database import *
+from database import posts
 
 @app.route('/')
 def hello():
