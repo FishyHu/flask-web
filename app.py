@@ -1,11 +1,13 @@
 from flask import *
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
 import os
 
 app = Flask(__name__)
 app.config.from_object(os.environ['SETTINGS'])
 
 db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
 
 from database import *
 
