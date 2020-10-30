@@ -9,7 +9,11 @@
 <body>
 
 <h2>Bloggy !</h2>
-<p>Welcome to bloggy !</p>
+
+{% for i in all %}
+	<h3>{{ i.title }}</h3>
+	<p>{{ i.body }}</p>
+{% endfor %}
 
 </body>
 </html>
