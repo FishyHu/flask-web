@@ -6,7 +6,6 @@ class posts(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
 	title = db.Column(db.String)
 	body = db.Column(db.String)
-	writer_id = db.Column(db.Integer,ForeignKey('writer.id'))
 
 	def __init__(self,title,body):
 		self.title = title
@@ -16,7 +15,6 @@ class writer(db.Model):
 	id = db.Column(db.Integer,primary_key=True)
 	name = db.Column(db.String)
 	password = db.Column(db.String)
-	relation = relationship('posts',backref='author')
 
 	def __init__(self,name,password):
 		self.name = name
