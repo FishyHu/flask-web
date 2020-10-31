@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Main Page&emsp;<a href='/quit'>Quit</a></h2>
+{% for i data %}
+	<h3>{{ i.title }}</h3>
+	<p>{{ i.body }}</p>
+	<p>By {{ i.author.name }}</p>
+{% endfor %}
+
+{% endblock %}

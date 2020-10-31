@@ -1,5 +1,5 @@
-from app import db
-from database import posts, writer
+from project import db
+from project.database import posts, writer
 
 db.create_all()
 db.session.add(writer('ikan','asin'))

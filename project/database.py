@@ -1,4 +1,4 @@
-from app import db, bcrypt
+from project import db, bcrypt
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
 
@@ -21,3 +21,15 @@ class writer(db.Model):
 	def __init__(self,name,password):
 		self.name = name
 		self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+	def is_authenticated(self):
+		return True
+
+	def is_active(self):
+		return True
+
+	def is_anonymous(self):
+		return False
+
+	def get_id(self):
+		return self.id

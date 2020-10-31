@@ -1,5 +1,5 @@
 import unittest
-from app import app, db
+from project import app, db
 
 class realTest(unittest.TestCase):
 	def test_index(self):

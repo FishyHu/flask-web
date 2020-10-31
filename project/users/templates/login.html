@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Login Page&emsp;<a href='/register'>Register</a></h2>
+<form action='' method='post'>
+	{{ form.csrf_token }}
+	{{ form.name(placeholder='Name') }}<br><br>
+	{{ form.password(placeholder='Password') }}<br><br>
+	<button type='submit'>Login</button>
+</form>
+
+{% endblock %}
