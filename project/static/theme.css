@@ -1,3 +1,45 @@
 *{
 	font-family: sans-serif;
+	border-radius: 5px;
+}
+
+p{
+	font-size: 17px;
+}
+
+hr{
+	color: #2b3d6d;
+}
+
+input{
+	max-width: 45%;
+	margin: 2px;
+	padding: 5px;
+	font-size: 17px;
+	border: 2px solid black;
+}
+
+button{
+	max-width: 25%;
+	margin: 2px;
+	padding: 5px;
+	text-align: center;
+	font-size: 17px;
+	border: 2px solid black;
+	background: white;
+	transition: 0.3s ease all 0s;
+}
+
+button:hover{
+	background: black;
+	color: white;
+}
+
+a{
+	color: #2b3d6d;
+	text-decoration: none;
+}
+
+a:active{
+	color: #2b4691;
 }

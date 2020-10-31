@@ -11,7 +11,7 @@ home_blueprint = Blueprint(
 @login_required
 def main():
 	all_data = posts.query.all()
-	return render_template('main.html',data=all_data)
+	return render_template('main.html',all=all_data)
 
 @home_blueprint.route('/home')
 def home():

@@ -21,19 +21,20 @@ def login():
 			flash('Hi !')
 			return redirect(url_for('home.main'))
 		else:
-			fllash('Wait a minute. Who are u ?')
+			flash('Wait a minute. Who are u ?')
 	return render_template('login.html',form=form)
 
-@users_blueprint.route('/register')
+@users_blueprint.route('/register',methods=['GET','POST'])
 def register():
 	form = Registerform()
 	if form.validate_on_submit():
 		user = writer(
-			form.name.data,
-			form.password.data
-			)
+			name=form.name.data,
+			password=form.password.data
+		)
 		db.session.add(user)
 		db.session.commit()
+		login_user(user)
 		flash('Hi there !')
 		return redirect(url_for('home.main'))
 	return render_template('register.html',form=form)
