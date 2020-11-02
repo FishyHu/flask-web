@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2>Main Page&emsp;<a href='/quit'>Quit</a></h2>
+<h2>Main Page&emsp;<a href='/add'>Add Post</a.>&emsp;<a href='/quit'>Quit</a></h2>
+
 {% for i in all %}
 	<h3>{{ i.title }}</h3>
 	<p>{{ i.body }}</p>
-	<p>By {{ i.author.name }}</p>
+	<p>By {{ i.author.name }}</p><br>
 {% endfor %}
 
 {% endblock %}
