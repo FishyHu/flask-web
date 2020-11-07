@@ -48,7 +48,7 @@ class realTest(baseTest):
 				data=dict(name='dodo',password='asin'),
 				follow_redirects=True
 				)
-			self.assertIn(b'ikan itu enak',rv.data)
+			self.assertIn(b'Main Page',rv.data)
 			self.assertTrue(current_user.name == 'dodo')
 			self.assertTrue(current_user.is_active())
 
@@ -70,7 +70,7 @@ class realTest(baseTest):
 				data=dict(name='lele',password='belut'),
 				follow_redirects=True
 				)
-			self.assertIn(b'dodo',rv.data)
+			self.assertIn(b'Main Page',rv.data)
 			self.assertTrue(current_user.name == 'lele')
 			self.assertTrue(current_user.is_active())
 
@@ -103,6 +103,18 @@ class realTest(baseTest):
 				)
 			self.assertIn(b'ruci',rv.data)
 			self.assertIn(b'luffys friend',rv.data)
+
+	def test_data(self):
+		rv = self.client.post(
+			'/login',
+			data=dict(name='lele',password='belut'),
+			follow_redirects=True
+			)
+		self.assertIn(b'ruci',rv.data)
+		self.assertIn(b'luffys friend',rv.data)
+		self.assertIn(b'ikan',rv.data)
+		self.assertIn(b'ikan itu enak',rv.data)
+		self.assertIn(b'dodo',rv.data)
 
 if __name__ == '__main__':
 	unittest.main()
