@@ -31,6 +31,11 @@ def added():
 		return redirect(url_for('home.main'))
 	return render_template('add.html',form=form)
 
+@home_blueprint.route('/about')
+@login_required
+def about():
+	return render_template('about.html')
+
 @home_blueprint.route('/home')
 def home():
 	return render_template('home.html')

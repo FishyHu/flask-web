@@ -11,12 +11,22 @@ hr{
 	color: #2b3d6d;
 }
 
-input{
+input,textarea{
 	max-width: 45%;
 	margin: 2px;
 	padding: 5px;
 	font-size: 17px;
-	border: 2px solid black;
+	resize: vertical;
+	border: 3px solid gray;
+	transition: 0.3s ease all 0s;
+}
+
+input:focus{
+	border: 3px solid black;
+}
+
+textarea:focus{
+	border: 3px solid black;
 }
 
 button{
@@ -33,6 +43,20 @@ button{
 button:hover{
 	background: black;
 	color: white;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 1px 8px 8px 3px;
+}
+
+li{
+  float: left;
+  display: block;
 }
 
 a{

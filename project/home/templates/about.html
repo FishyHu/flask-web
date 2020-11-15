@@ -2,18 +2,13 @@
 {% block content %}
 
 <ul>
-	<li>Main Page</li>
+	<li>About Page</li>
 	<li><a href='/'>Main Page</a></li>
 	<li><a href='/add'>Add Posts</a></li>
 	<li><a href='/about'>About Page</a></li>
 	<li><a href='/quit'>Quit</a></li>
 <ul>
-
 <br><br>
-{% for i in all %}
-	<h3>{{ i.title }}</h3>
-	<p>{{ i.body }}</p>
-	<p>By {{ i.author.name }}</p><br>
-{% endfor %}
+<p>FishyHu is the guy who made this page</p>
 
 {% endblock %}

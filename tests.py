@@ -96,6 +96,9 @@ class realTest(baseTest):
 			self.assertTrue(current_user.name == 'dodo')
 			self.assertTrue(current_user.is_active())
 
+			rv = self.client.get('/add',follow_redirects=True)
+			self.assertIn(b'Add Some Post',rv.data)
+
 			rv = self.client.post(
 				'/add',
 				data=dict(title='ruci',body='luffys friend'),

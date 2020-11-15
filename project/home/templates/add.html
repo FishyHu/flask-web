@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<ul>
+	<li>Add Posts</li>
+	<li><a href='/'>Main Page</a></li>
+	<li><a href='/add'>Add Posts</a></li>
+	<li><a href='/about'>About Page</a></li>
+	<li><a href='/quit'>Quit</a></li>
+<ul>
+<br><br>
+
 <form action='' method='post'>
 	{{ form.csrf_token }}
 	{{ form.title(placeholder='Title') }}<br><br>
