@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<ul>
-	<li>Main Page</li>
-	<li><a href='/'>Main Page</a></li>
-	<li><a href='/add'>Add Posts</a></li>
-	<li><a href='/about'>About Page</a></li>
-	<li><a href='/quit'>Quit</a></li>
-<ul>
+<div class='center'>
+	<ul>
+		<li><a href='/'>Main</a></li>
+		<li><a href='/add'>Add Posts</a></li>
+		<li><a href='/about'>About</a></li>
+		<li><a href='/quit'>Quit</a></li>
+	</ul>
+</div>
 
-<br><br>
+<h2>Main</h2>
 {% for i in all %}
 	<h3>{{ i.title }}</h3>
 	<p>{{ i.body }}</p>
