@@ -1,6 +1,6 @@
-from project import db, bcrypt
-from sqlalchemy import ForeignKey
-from sqlalchemy.orm import relationship
+from project import db, bcrypt # pragma: no cover
+from sqlalchemy import ForeignKey # pragma: no cover
+from sqlalchemy.orm import relationship # pragma: no cover
 
 class posts(db.Model):
 	id = db.Column(db.Integer,primary_key=True)

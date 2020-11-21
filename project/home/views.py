@@ -1,13 +1,15 @@
-from flask import *
-from flask_login import login_required, current_user
-from .forms import Blogform
-from project import db
-from project.database import posts, writer
+from flask import Blueprint, flash, \
+render_template, redirect, url_for # pragma: no cover
+from flask_login import login_required, \
+current_user # pragma: no cover
+from .forms import Blogform # pragma: no cover
+from project import db # pragma: no cover
+from project.database import posts, writer # pragma: no cover
 
 home_blueprint = Blueprint(
 	'home',__name__,
 	template_folder='templates'
-	)
+	) # pragma: no cover
 
 @home_blueprint.route('/')
 @login_required

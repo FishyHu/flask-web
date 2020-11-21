@@ -1,13 +1,15 @@
-from flask import *
-from project import db, bcrypt
-from .forms import Loginform, Registerform
-from flask_login import login_user, logout_user, login_required
-from project.database import writer
+from flask import Blueprint, flash, \
+render_template, redirect, url_for, request # pragma: no cover
+from project import db, bcrypt # pragma: no cover
+from .forms import Loginform, Registerform # pragma: no cover
+from flask_login import login_user, logout_user, \
+login_required # pragma: no cover
+from project.database import writer # pragma: no cover
 
 users_blueprint = Blueprint(
 	'users',__name__,
 	template_folder='templates'
-	)
+	) # pragma: no cover
 
 @users_blueprint.route('/login',methods=['GET','POST'])
 def login():
