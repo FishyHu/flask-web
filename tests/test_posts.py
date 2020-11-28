@@ -9,7 +9,7 @@ class postsTest(baseTest):
 			data=dict(name='orang',password='orang'),
 			follow_redirects=True
 			)
-		self.assertIn(b'Main Page',rv.data)
+		self.assertIn(b'Main',rv.data)
 
 		rv = self.client.get('/add',follow_redirects=True)
 		self.assertIn(b'Add Posts',rv.data)
