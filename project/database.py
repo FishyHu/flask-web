@@ -23,14 +23,14 @@ class writer(db.Model):
 		self.name = name
 		self.password = bcrypt.generate_password_hash(password).decode('utf-8')
 
-	def is_authenticated(self):
+	def is_authenticated(self): # pragma: no cover
 		return True
 
-	def is_active(self):
+	def is_active(self): # pragma: no cover
 		return True
 
-	def is_anonymous(self):
+	def is_anonymous(self): # pragma: no cover
 		return False
 
-	def get_id(self):
+	def get_id(self): # pragma: no cover
 		return self.id

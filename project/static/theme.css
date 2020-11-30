@@ -69,7 +69,7 @@ ul{
   font-size: 20px;
 }
 
-li{
+li a{
   float: left;
   display: block;
   padding: 0 8px;
@@ -80,6 +80,6 @@ a{
 	text-decoration: none;
 }
 
-a:active{
+a:hover{
 	color: #2b3d6d;
 }

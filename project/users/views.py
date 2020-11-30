@@ -11,7 +11,7 @@ users_blueprint = Blueprint(
 	template_folder='templates'
 	) # pragma: no cover
 
-@users_blueprint.route('/login',methods=['GET','POST'])
+@users_blueprint.route('/login',methods=['GET','POST']) # pragma: no cover
 def login():
 	form = Loginform()
 	if form.validate_on_submit():
@@ -26,7 +26,7 @@ def login():
 			flash('Wait a minute. Who are u ?')
 	return render_template('login.html',form=form)
 
-@users_blueprint.route('/register',methods=['GET','POST'])
+@users_blueprint.route('/register',methods=['GET','POST']) # pragma: no cover
 def register():
 	form = Registerform()
 	if form.validate_on_submit():
@@ -41,8 +41,8 @@ def register():
 		return redirect(url_for('home.main'))
 	return render_template('register.html',form=form)
 
-@users_blueprint.route('/quit')
-@login_required
+@users_blueprint.route('/quit') # pragma: no cover
+@login_required # pragma: no cover
 def quit():
 	logout_user()
 	flash('Bye...')

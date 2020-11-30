@@ -11,14 +11,14 @@ home_blueprint = Blueprint(
 	template_folder='templates'
 	) # pragma: no cover
 
-@home_blueprint.route('/')
+@home_blueprint.route('/') # pragma: no cover
 @login_required
 def main():
 	all_data = posts.query.all()
 	return render_template('main.html',all=all_data)
 
-@home_blueprint.route('/add',methods=['GET','POST'])
-@login_required
+@home_blueprint.route('/add',methods=['GET','POST']) # pragma: no cover
+@login_required # pragma: no cover
 def added():
 	form = Blogform()
 	if form.validate_on_submit():
@@ -33,11 +33,11 @@ def added():
 		return redirect(url_for('home.main'))
 	return render_template('add.html',form=form)
 
-@home_blueprint.route('/about')
-@login_required
+@home_blueprint.route('/about') # pragma: no cover
+@login_required # pragma: no cover
 def about():
 	return render_template('about.html')
 
-@home_blueprint.route('/home')
+@home_blueprint.route('/home') # pragma: no cover
 def home():
 	return render_template('home.html')
